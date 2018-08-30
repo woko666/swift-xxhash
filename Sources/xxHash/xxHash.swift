@@ -16,7 +16,7 @@ private struct XXPrimes {
     static let prime5:UInt64 = 2870177450012600261
 }
 
-struct XXHash {
+open class XXHash {
     var s1: UInt64
     var s2: UInt64
     var s3: UInt64
@@ -27,7 +27,7 @@ struct XXHash {
 
     var count: Int
 
-    init(seed: UInt64) {
+    public init(seed: UInt64) {
         self.s1 = seed &+ XXPrimes.prime1 &+ XXPrimes.prime2
         self.s2 = seed &+ XXPrimes.prime2
         self.s3 = seed
@@ -54,7 +54,7 @@ struct XXHash {
         return current
     }
 
-    mutating func update(buffer: [UInt8]) {
+    public func update(buffer: [UInt8]) {
         guard let unsafeBuffer = buffer.withUnsafeBufferPointer({ return $0.baseAddress }),
             let storagePointer =  storage.withUnsafeBufferPointer({ return $0.baseAddress }) else { return }
 
@@ -119,7 +119,7 @@ struct XXHash {
     }
 
 
-    func digest() -> UInt64 {
+    public func digest() -> UInt64 {
         let storageBufferPointer = storage.withUnsafeBufferPointer { return $0 }
 
         // Base Pointers
