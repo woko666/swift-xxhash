@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.name             = "swift-xxhash"
   s.version          = "0.1.0"
   s.summary          = "Swift xxhash"
-  s.swift_version    = "4.1"
+  #s.swift_version    = "4.1"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,15 +28,11 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/woko666/swift-xxhash.git", :tag => s.version.to_s}
 
   s.ios.deployment_target = '8.0'
-  s.tvos.deployment_target = '9.0'
-  s.watchos.deployment_target = '2.0'
-  s.osx.deployment_target = '10.9'
-  s.requires_arc = true
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  #s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
   s.source_files = 'Sources/xxHash/*.{swift,h}'
-  s.public_header_files = 'Sources/xxHash/*.h'
+  #s.public_header_files = 'Sources/xxHash/*.h'
   #s.pod_target_xcconfig = {'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/Sources/xxHash/**','LIBRARY_SEARCH_PATHS' => '$(SRCROOT)/Zip/Zip/'}
   # s.public_header_files = 'Pod/Classes/**/*.h'
   #s.libraries = 'z'
